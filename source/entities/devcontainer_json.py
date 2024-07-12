@@ -20,6 +20,7 @@ class PythonSchema:
                     "charliermarsh.ruff",
                     "christian-kohler.path-intellisense",
                     "tamasfe.even-better-toml",
+                    "redhat.vscode-yaml",
                 ]
             }
         },

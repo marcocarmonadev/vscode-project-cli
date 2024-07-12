@@ -9,7 +9,8 @@
                 "ms-python.python",
                 "charliermarsh.ruff",
                 "christian-kohler.path-intellisense",
-                "tamasfe.even-better-toml"
+                "tamasfe.even-better-toml",
+                "redhat.vscode-yaml"
             ]
         }
     },

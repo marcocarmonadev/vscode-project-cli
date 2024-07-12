@@ -1,0 +1,22 @@
+{
+    "name": "vscode-project-cli",
+    "containerEnv": {
+        "POETRY_VIRTUALENVS_IN_PROJECT": "true"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "charliermarsh.ruff",
+                "christian-kohler.path-intellisense",
+                "tamasfe.even-better-toml"
+            ]
+        }
+    },
+    "image": "mcr.microsoft.com/devcontainers/python:1-3.10",
+    "runArgs": [
+        "--name=vscode-project-cli-devcontainer"
+    ],
+    "onCreateCommand": "curl -sSL https://install.python-poetry.org | python3 -",
+    "postCreateCommand": "poetry install"
+}

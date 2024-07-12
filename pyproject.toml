@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "vscode-project"
+name = "vscode-project-cli"
 version = "0.1.0"
 description = ""
 authors = ["Marco Carmona <marcocarmonadev@outlook.com>"]
@@ -8,7 +8,7 @@ packages = [{ "include" = "source" }]
 
 
 [tool.poetry.scripts]
-vscode-project = "source.frameworks_and_devices.cli:cli"
+vscode-project-cli = "source.frameworks_and_devices.cli:cli"
 
 [tool.poetry.dependencies]
 python = "^3.10"

@@ -1,5 +1,12 @@
 {
     "name": "vscode-project-cli",
+    "mounts": [
+        {
+            "source": "${localEnv:HOME}/.ssh",
+            "target": "/home/vscode/.ssh",
+            "type": "bind"
+        }
+    ],
     "containerEnv": {
         "POETRY_VIRTUALENVS_IN_PROJECT": "true"
     },

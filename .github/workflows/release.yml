@@ -15,7 +15,4 @@ jobs:
       - uses: abatilo/actions-poetry@v2
         with:
           poetry-version: 1.8
-      - run: poetry publish --build --username $PYPI_USERNAME --password $PYPI_PASSWORD
-        env:
-          PYPI_USERNAME: ${{ secrets.PYPI_USERNAME }}
-          PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+      - run: poetry publish --build --username ${{ secrets.PYPI_USERNAME }} --password ${{ secrets.PYPI_PASSWORD }}

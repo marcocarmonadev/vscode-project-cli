@@ -62,6 +62,8 @@ def get_settings_json_schema(
             settings_json_schema = settings_json.PYTHON_SCHEMA
         case enums.Language.DART:
             settings_json_schema = settings_json.DART_SCHEMA
+        case enums.Language.JAVASCRIPT:
+            settings_json_schema = settings_json.JAVASCRIPT_SCHEMA
         case _:
             settings_json_schema = {}
     return settings_json_schema

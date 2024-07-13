@@ -11,6 +11,10 @@ PYTHON_SCHEMA = {
     "python.analysis.autoImportCompletions": True,
 }
 
+JAVASCRIPT_SCHEMA = {
+    "[javascript]": {},
+}
+
 DART_SCHEMA = {
     "[dart]": {
         "editor.rulers": [80],

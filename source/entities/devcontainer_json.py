@@ -52,6 +52,17 @@ class PythonSchema:
 @dataclass
 class JavascriptSchema:
     name: str
+    customizations: dict[str, Any] = field(
+        init=False,
+        default_factory=lambda: {
+            "vscode": {
+                "extensions": [
+                    "christian-kohler.path-intellisense",
+                    "VisualStudioExptTeam.vscodeintellicode",
+                ]
+            }
+        },
+    )
     image: str = field(
         init=False,
         default="mcr.microsoft.com/devcontainers/javascript-node:20",

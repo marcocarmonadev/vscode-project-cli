@@ -27,7 +27,7 @@ class PythonSchema:
     )
     image: str = field(
         init=False,
-        default="mcr.microsoft.com/devcontainers/python:1-3.10",
+        default="mcr.microsoft.com/devcontainers/python:3.10",
     )
     runArgs: list[str] = field(
         init=False,
@@ -40,6 +40,25 @@ class PythonSchema:
     postCreateCommand: str = field(
         init=False,
         default="poetry install",
+    )
+
+    def __post_init__(self):
+        self.name = self.name.strip()
+        self.runArgs.append(
+            f'--name={self.name.lower().replace(" ", "-")}-devcontainer'
+        )
+
+
+@dataclass
+class JavascriptSchema:
+    name: str
+    image: str = field(
+        init=False,
+        default="mcr.microsoft.com/devcontainers/javascript-node:20",
+    )
+    runArgs: list[str] = field(
+        init=False,
+        default_factory=list,
     )
 
     def __post_init__(self):

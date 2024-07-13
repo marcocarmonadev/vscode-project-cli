@@ -28,16 +28,16 @@ def check_vscode_settings_json_existance():
 def init(
     language: str,
 ):
-    if settings_json_schema := get_settings_json_schema(language):
-        VSCODE_DIR_PATH.mkdir(
-            exist_ok=True,
+    settings_json_schema = get_settings_json_schema(language)
+    VSCODE_DIR_PATH.mkdir(
+        exist_ok=True,
+    )
+    VSCODE_SETTINGS_JSON_PATH.write_text(
+        data=json.dumps(
+            obj=settings_json_schema,
+            indent=4,
         )
-        VSCODE_SETTINGS_JSON_PATH.write_text(
-            data=json.dumps(
-                obj=settings_json_schema,
-                indent=4,
-            )
-        )
+    )
 
     if devcontainer_json_schema := get_devcontainer_json_schema(
         language,
@@ -74,6 +74,8 @@ def get_devcontainer_json_schema(
     match language:
         case enums.Language.PYTHON:
             devcontainer_json_schema = devcontainer_json.PythonSchema(name)
+        case enums.Language.JAVASCRIPT:
+            devcontainer_json_schema = devcontainer_json.JavascriptSchema(name)
         case _:
             devcontainer_json_schema = None
     return devcontainer_json_schema
